@@ -1,16 +1,14 @@
 ## ANATOMY ANALYSIS CODE DOCUMENTATION
 
-### Corticostriatal Analysis (in order):
-File Name	|	Purpose
-------------|------------
-1. jh_export2matlab4.py	|	Get AIBS data out of python
-2. jh_GetDensityDataFromWeb.py	|	Access AIBS API
-3. jh_pImport2matlab2.m	|	Get AIBS data aligned & prepped for analysis
-4. jh_AllenInstituteBundleSubtraction
-5. jh_consolidatingAIBSdatasets.m
- 
-### Thalamostriatal Analysis:
-6.  
+### Corticostriatal & Thalamostriatal Analysis Scripts (in order):
+| File Name							|	Purpose
+| ----------------------------------|-------------
+| 1. jh_export2matlab4.py			|	Get AIBS data out of python
+| 2. jh_GetDensityDataFromWeb.py	|	Access AIBS API
+| 3. jh_pImport2matlab2.m			|	Get AIBS data aligned & prepped for analysis
+| 4. jh_AllenInstituteBundleSubtraction.m	|	Remove bundled projections from AIBS data
+| 5. jh_consolidatingAIBSdatasets.m	|	Group injection data by cortical origin
+| 6.  
 
 	 
 ### Details about each step:
