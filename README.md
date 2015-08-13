@@ -7,7 +7,7 @@
 | 2. jh_GetDensityDataFromWeb.py	|	Access AIBS API
 | 3. jh_pImport2matlab2.m			|	Get AIBS data aligned & prepped for analysis
 | 4. jh_AllenInstituteBundleSubtraction.m	|	Remove bundled projections from AIBS data
-| 5. jh_consolidatingAIBSdatasets.m	|	Group injection data by cortical origin
+| 5. jh_consolidatingAIBSdatasets.m	|	Group injections data by cortical origin
 | 6.  
 
 	 
