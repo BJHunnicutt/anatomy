@@ -1,9 +1,10 @@
 ## ANATOMY ANALYSIS CODE DOCUMENTATION
 
 ### Corticostriatal Analysis (in order):
-1. jh_export2matlab4.py
-2. jh_GetDensityDataFromWeb.py
-3. jh_pImport2matlab2.m
+File Name	|	Purpose
+1. jh_export2matlab4.py	|	Get AIBS data out of python
+2. jh_GetDensityDataFromWeb.py	|	Access AIBS API
+3. jh_pImport2matlab2.m	|	Get AIBS data aligned & prepped for analysis
 4. jh_AllenInstituteBundleSubtraction
 5. jh_consolidatingAIBSdatasets.m
  
