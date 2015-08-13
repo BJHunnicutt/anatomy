@@ -18,13 +18,15 @@ anaDir = cd;
 % Random Manual masks that need to be collected for this to work:
 randomMasksDir = uigetdir(targetDir, 'Where are the collected masks?');
 % strmask_ic_submask.mat
+% averageTemplate100um_rotated.mat
 % averageTemplate100umACA_rotated.mat
 % AIBS_100um.mat
 
 %Some things to load first if I'm not going to redo it all:
 load([anaDir, '/data_pImport.mat']) % Import variable from jh_pImport2matlab.m: data
 
-load([randomMasksDir, '/averageTemplate100umACA_rotated.mat']) % Import variable from jh_pImport2matlab.m: averageTemplate100umACA_rotated
+load([randomMasksDir, '/averageTemplate100umACA_rotated.mat']) % Import averageTemplate100umACA_rotated
+load([randomMasksDir, '/averageTemplate100um_rotated.mat']) % Import variable from jh_pImport2matlab.m: averageTemplate100um_rotated
 load([randomMasksDir, '/strmask_ic_submask.mat']) %I made a mask that removes the internal capsule
 load([randomMasksDir, '/AIBS_100um.mat'])  %this was made later, but can replace a lot of missing things if needed
 ic_submask = submask;
@@ -51,7 +53,7 @@ for i = 1: length(fNames)
     inj_data(i).expID = fNames{i}(2:end);
 end
 
-cd ..meta3
+cd ../meta3
 metaDir = cd;
 
 for i = 1: length(inj_data)
@@ -103,7 +105,7 @@ for g = 1:length(fNames)
 end
 expIDcell = expIDcell';
 
-targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
+% targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
 
 for i = 1: length(inj_data)
     if inj_data(i).expID == num2str(expIDcell{i})
@@ -126,10 +128,10 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Then I'll create composite masks for the cortical groups at 3 thresholds.... 
 
-targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/averageBrain100um/averageTemplate100um_rotated.mat')
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/strmask_ic_submask.mat') %I made a mask that removes the internal capsule
-ic_submask = submask;
+% targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
+% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/averageBrain100um/averageTemplate100um_rotated.mat')
+% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/strmask_ic_submask.mat') %I made a mask that removes the internal capsule
+% ic_submask = submask;
 
 group = {'ACA','AI_GU_VISC','AUD','ECT_PERI_TE','FRA','IL','MOp','ORBl','PL_MO','PTL','RSP','SSp','SSp-bfd','SSs','VISam','VISl','VISp', 'SS', 'Vis', 'SUB_HIPP', 'Amyg', 'SNr', 'na'};
 
@@ -287,9 +289,10 @@ for i = 1:length(group);
 end
 
 
-save('analyzed3/injGroup_data.mat','injGroup_data', '-v7.3') 
-save('analyzed3/inj_data.mat', 'inj_data')
+save([anaDir, '/injGroup_data.mat'],'injGroup_data', '-v7.3') 
+save([anaDir, '/inj_data.mat'], 'inj_data')
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 8/12/15  JH- Make everything below their own funcions??
 
 %% This will plot the ipsilateral and contralateral summed coronal, sagital and longitudinal view of each threshold (for an overview of the data)
 

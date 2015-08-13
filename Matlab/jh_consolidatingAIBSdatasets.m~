@@ -289,9 +289,10 @@ for i = 1:length(group);
 end
 
 
-save('analyzed3/injGroup_data.mat','injGroup_data', '-v7.3') 
-save('analyzed3/inj_data.mat', 'inj_data')
+save([anaDir, '/injGroup_data.mat'],'injGroup_data', '-v7.3') 
+save([anaDir, '/inj_data.mat'], 'inj_data')
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 8/12/15 Make a new 
 
 %% This will plot the ipsilateral and contralateral summed coronal, sagital and longitudinal view of each threshold (for an overview of the data)
 

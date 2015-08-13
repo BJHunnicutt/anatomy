@@ -69,7 +69,8 @@ handles.output = hObject;
 
 load injMeta.mat
 load rotatedData.mat
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/averageBrain100um/averageTemplate100um_rotated.mat')
+[FileName,PathName] = uigetfile('/', 'Open the file: averageTemplate100um.mat');
+load([PathName, FileName])  %This is opening the template brain without hard coding the filepath
 
 if ~isfield(injMeta, 'striatum')
     injMeta.striatum = [];
