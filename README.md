@@ -88,15 +88,6 @@
 * __Saves__:
 * __Running Notes__:
 	
-#### jh_corticalstratal_notes.m (spelled this way)
-* __Purpose__: 
-* __Old File Location__: 
-* __Location to run__:
-* __Inputs__:
-* __Outputs__:
-* __Saves__:
-* __Running Notes__:
-	
 #### jh_assortedStriatumFigures_postThesis.m
 * __Purpose__: 
 * __Old File Location__: 
