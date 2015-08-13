@@ -7,13 +7,13 @@
 4. jh_AllenInstituteBundleSubtraction
 5. jh_consolidatingAIBSdatasets.m
  
-### Thalamostriatal Analysis (in order):
-1.  
+### Thalamostriatal Analysis:
+10.  
 
 	 
-### Details about Scripts & Functions:
-#### 1. jh_export2matlab4.py
-* __Purpose__: Get the voxelized data for the striatum (CP + ACB) from python into matrices for matlab
+### Details about each step:
+#### 1. jh_export2matlab4.py (python)
+* __Purpose__: Get the voxelized AIBS data for the striatum (CP + ACB) from python into matrices for matlab
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject/pCode/export2matlab4_jh.py
 * __Changes during cleanup__:
 * __Location to run__: anywhere as long as the data directory is correct, hard coded for my computer
@@ -22,7 +22,7 @@
 * __Saves__: the outputs above for all brain #s listed in the script as “region_specific_injs“
 * __Running Notes__: 
 
-#### 2. jh_getDensityDataFromWeb.py 
+#### 2. jh_getDensityDataFromWeb.py (python) 
 * __Purpose__:  Access the AIBS API to get the density and volume of projections to all other brain areas by each injection.
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject2/ GetDensityDataFromWeb.py
 * __Changes during cleanup__:
@@ -32,7 +32,7 @@
 * __Saves__: 'structure_ids.csv' & 'edges.csv'
 * __Running Notes__:
 
-#### 3. jh_pImport2matlab2.m (function)
+#### 3. jh_pImport2matlab2.m (matlab function)
 * __Purpose__: Imports the data from ‘jh_export2matlab4.py’, puts it in a matrix, rotates it to be coronal, masks the density data to my model striatum, & creates a data folder with tiffs for each experiment
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject/pCode/
 * __Changes during cleanup__: Turned it into a function, generalized file paths
@@ -42,7 +42,7 @@
 * __Saves__: outputs, average template brain, tiffs with the injection/projection overlaid on the template brain
 * __Running Notes__: Run the whole script once, or run section by section (i.e. the %% chunks) creating tiffs for each experiment in the last section, which will be very slow
 
-#### jh_AllenInstituteBundleSubtraction (GUI)
+#### jh_AllenInstituteBundleSubtraction.m (matlab GUI)
 * __Purpose__: To remove bundled projections that the AIBS data counts as terminals
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Striatum Project/StriatumAnatomyCode/MATLAB/inPath
 * __Location to run__: In the AIBS experiment folder: e.g. /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/100140756
@@ -51,7 +51,7 @@
 * __Saves__: submask and also updates injMeta.mat
 * __Running Notes__: This is a manual step to apply to all AIBS data. This is a GUI so it must have the jh_AllenInstituteBundleSubtraction.fig file in the same path. Notes on Google Drive as: AIBS Bundle Subtraction Notes
 
-#### jh_consolidatingAIBSdatasets.m
+#### jh_consolidatingAIBSdatasets.m (matlab function)
 * __Purpose__: group injections from the same cortical area
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject
 * __Changes during cleanup__: Made it a function, generalized filepaths, 
