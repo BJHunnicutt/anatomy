@@ -1,23 +1,18 @@
-## Description of all anatomy analysis code
+## ANATOMY ANALYSIS CODE DOCUMENTATION
 
 ### Corticostriatal Analysis (in order):
-* jh_export2matlab4.py
-* jh_GetDensityDataFromWeb.py
-* jh_pImport2matlab2.m
-* jh_AllenInstituteBundleSubtraction
-* jh_consolidatingAIBSdatasets.m
+1. jh_export2matlab4.py
+2. jh_GetDensityDataFromWeb.py
+3. jh_pImport2matlab2.m
+4. jh_AllenInstituteBundleSubtraction
+5. jh_consolidatingAIBSdatasets.m
  
 ### Thalamostriatal Analysis (in order):
-* 
-* 
-
-### Comparative Analysis (in order):
-* 
-* 
+1.  
 
 	 
 ### Details about Scripts & Functions:
-#### jh_export2matlab4.py
+#### 1. jh_export2matlab4.py
 * __Purpose__: Get the voxelized data for the striatum (CP + ACB) from python into matrices for matlab
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject/pCode/export2matlab4_jh.py
 * __Changes during cleanup__:
@@ -27,7 +22,7 @@
 * __Saves__: the outputs above for all brain #s listed in the script as “region_specific_injs“
 * __Running Notes__: 
 
-#### jh_getDensityDataFromWeb.py 
+#### 2. jh_getDensityDataFromWeb.py 
 * __Purpose__:  Access the AIBS API to get the density and volume of projections to all other brain areas by each injection.
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject2/ GetDensityDataFromWeb.py
 * __Changes during cleanup__:
@@ -37,7 +32,7 @@
 * __Saves__: 'structure_ids.csv' & 'edges.csv'
 * __Running Notes__:
 
-#### jh_pImport2matlab2.m (function)
+#### 3. jh_pImport2matlab2.m (function)
 * __Purpose__: Imports the data from ‘jh_export2matlab4.py’, puts it in a matrix, rotates it to be coronal, masks the density data to my model striatum, & creates a data folder with tiffs for each experiment
 * __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject/pCode/
 * __Changes during cleanup__: Turned it into a function, generalized file paths
