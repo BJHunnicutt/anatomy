@@ -2,6 +2,7 @@
 
 ### Corticostriatal Analysis (in order):
 File Name	|	Purpose
+------------|------------
 1. jh_export2matlab4.py	|	Get AIBS data out of python
 2. jh_GetDensityDataFromWeb.py	|	Access AIBS API
 3. jh_pImport2matlab2.m	|	Get AIBS data aligned & prepped for analysis
