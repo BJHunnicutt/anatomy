@@ -8,7 +8,7 @@
 5. jh_consolidatingAIBSdatasets.m
  
 ### Thalamostriatal Analysis:
-10.  
+6.  
 
 	 
 ### Details about each step:
