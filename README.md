@@ -25,97 +25,91 @@
 
 #### jh_getDensityDataFromWeb.py 
 * __Purpose__:  Access the AIBS API to get the density and volume of projections to all other brain areas by each injection.
-Old File Location: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject2/ GetDensityDataFromWeb.py
-Changes during cleanup:
-Location to run: anywhere as long as the data directory is correct, hard coded for my computer
-Inputs: Voxelized data from the AIBS: ‘raw_data’ folder, AIBS API, friday_harbor.structure, friday_harbor.mask, friday_harbor.experiment
-Outputs: csv files with data formatted for Gephi (edges and nodes)
-Saves: 'structure_ids.csv' & 'edges.csv'
-Running Notes:
+* __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject2/ GetDensityDataFromWeb.py
+* __Changes during cleanup__:
+* __Location to run__: anywhere as long as the data directory is correct, hard coded for my computer
+* __Inputs__: Voxelized data from the AIBS: ‘raw_data’ folder, AIBS API, friday_harbor.structure, friday_harbor.mask, friday_harbor.experiment
+* __Outputs__: csv files with data formatted for Gephi (edges and nodes)
+* __Saves__: 'structure_ids.csv' & 'edges.csv'
+* __Running Notes__:
 
-	jh_pImport2matlab2.m (function)
-- Purpose: Imports the data from ‘jh_export2matlab4.py’, puts it in a matrix, rotates it to be coronal, masks the density data to my model striatum, & creates a data folder with tiffs for each experiment
-Old File Location: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject/pCode/
-Changes during cleanup: Turned it into a function, generalized file paths
-Location to run: anywhere, I generalized the file paths
-Inputs: directory path to the output of jh_export2matlab4.py, saveFlag (0 or 1)
-Outputs: rotatedData, data (these are the final density matrices for each AIBS experiment)
-Saves: outputs, average template brain, tiffs with the injection/projection overlaid on the template brain
-Running Notes: Run the whole script once, or run section by section (i.e. the %% chunks) 
-creating tiffs for each experiment in the last section, which will be very slow
+#### jh_pImport2matlab2.m (function)
+* __Purpose__: Imports the data from ‘jh_export2matlab4.py’, puts it in a matrix, rotates it to be coronal, masks the density data to my model striatum, & creates a data folder with tiffs for each experiment
+* __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/GroupProject/pCode/
+* __Changes during cleanup__: Turned it into a function, generalized file paths
+* __Location to run__: anywhere, I generalized the file paths
+* __Inputs__: directory path to the output of jh_export2matlab4.py, saveFlag (0 or 1)
+* __Outputs__: rotatedData, data (these are the final density matrices for each AIBS experiment)
+* __Saves__: outputs, average template brain, tiffs with the injection/projection overlaid on the template brain
+* __Running Notes__: Run the whole script once, or run section by section (i.e. the %% chunks) creating tiffs for each experiment in the last section, which will be very slow
 
-	jh_AllenInstituteBundleSubtraction (GUI)
-		- Purpose: To remove bundled projections that the AIBS data counts as terminals
-Old File Location: /Users/jeaninehunnicutt/Desktop/Striatum Project/StriatumAnatomyCode/MATLAB/inPath
-Location to run: In the AIBS experiment folder: e.g. /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/100140756
-Inputs: rotatedData.mat, injMeta.mat, averageTemplate100um_rotated.mat
-Outputs: submask.mat
-Saves: submask and also updates injMeta.mat
-Running Notes: This is a manual step to apply to all AIBS data. 
-This is a GUI so it must have the jh_AllenInstituteBundleSubtraction.fig file in the same path 
-Notes on Google Drive as: AIBS Bundle Subtraction Notes
+#### jh_AllenInstituteBundleSubtraction (GUI)
+* __Purpose__: To remove bundled projections that the AIBS data counts as terminals
+* __Old File Location__: /Users/jeaninehunnicutt/Desktop/Striatum Project/StriatumAnatomyCode/MATLAB/inPath
+* __Location to run__: In the AIBS experiment folder: e.g. /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/100140756
+* __Inputs__: rotatedData.mat, injMeta.mat, averageTemplate100um_rotated.mat
+* __Outputs__: submask.mat
+* __Saves__: submask and also updates injMeta.mat
+* __Running Notes__: This is a manual step to apply to all AIBS data. This is a GUI so it must have the jh_AllenInstituteBundleSubtraction.fig file in the same path 
+	Notes on Google Drive as: AIBS Bundle Subtraction Notes
 
-	jh_consolidatingAIBSdatasets.m
-- Purpose: group injections from the same cortical area
-Old File Location: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject
-Changes during cleanup: Made it a function, generalized filepaths, 
-Location to run: Anywhere, I generalized the file paths
-Inputs: Outputs from jh_pImport2matlab2.m and jh_AllenInstituteBundleSubtraction, and strmask_ic_submask.mat, averageTemplate100um_rotated.mat, averageTemplate100umACA_rotated.mat, AIBS_100um.mat. 
-Outputs: injGroup_data, inj_data, 
-Saves: injGroup_data.mat, inj_data.mat
-Running Notes:
+#### jh_consolidatingAIBSdatasets.m
+* __Purpose__: group injections from the same cortical area
+* __Old File Location__: /Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject
+* __Changes during cleanup__: Made it a function, generalized filepaths, 
+* __Location to run__: Anywhere, I generalized the file paths
+* __Inputs__: Outputs from jh_pImport2matlab2.m and jh_AllenInstituteBundleSubtraction, and strmask_ic_submask.mat, averageTemplate100um_rotated.mat, averageTemplate100umACA_rotated.mat, AIBS_100um.mat. 
+* __Outputs__: injGroup_data, inj_data, 
+* __Saves__: injGroup_data.mat, inj_data.mat
+* __Running Notes__:
 	
-	jh_voxelClustering_striatum3.m
-- Purpose: 
-Old File Location: 
-Location to run:
-Inputs:
-Outputs:
-Saves:
-Running Notes:
+#### jh_voxelClustering_striatum3.m
+* __Purpose__: 
+* __Old File Location__: 
+* __Location to run__:
+* __Inputs__:
+* __Outputs__:
+* __Saves__:
+* __Running Notes__:
 	
-	jh_consolidatingThalamusData.m
-- Purpose: get thalamic injections, group them, calculate coverage & nuclear coverage
-Old File Location: 
-Changes during cleanup:
-Location to run:
-Inputs:
-Outputs:
-Saves:
-Running Notes:
+#### jh_consolidatingThalamusData.m
+* __Purpose__: get thalamic injections, group them, calculate coverage & nuclear coverage
+* __Old File Location__: 
+* __Location to run__:
+* __Inputs__:
+* __Outputs__:
+* __Saves__:
+* __Running Notes__:
 	
-	jh_consolidatingAIBSdatasets_forGephi.m
-- Purpose: (not used yet...)
-Old File Location: 
-Changes during cleanup:
-Location to run:
-Inputs:
-Outputs:
-Saves:
-Running Notes:
+#### jh_consolidatingAIBSdatasets_forGephi.m
+* __Purpose__: (not used yet...)
+* __Old File Location__: 
+* __Location to run__:
+* __Inputs__:
+* __Outputs__:
+* __Saves__:
+* __Running Notes__:
 	
 	jh_corticalstratal_notes.m (spelled this way)
-- Purpose: 
-Old File Location: 
-Changes during cleanup:
-Location to run:
-Inputs:
-Outputs:
-Saves:
-Running Notes:
+* __Purpose__: 
+* __Old File Location__: 
+* __Location to run__:
+* __Inputs__:
+* __Outputs__:
+* __Saves__:
+* __Running Notes__:
 	
 	jh_assortedStriatumFigures_postThesis.m
-- Purpose: 
-Old File Location: 
-Changes during cleanup:
-Location to run:
-Inputs:
-Outputs:
-Saves:
-Running Notes:
+* __Purpose__: 
+* __Old File Location__: 
+* __Location to run__:
+* __Inputs__:
+* __Outputs__:
+* __Saves__:
+* __Running Notes__:
 
 
-Where Thesis Figures are Made:
+### Where Thesis Figures are Made:
 Figure 1
 Figure 2
 Figure 3
