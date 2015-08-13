@@ -1,13 +1,17 @@
 ## Description of all anatomy analysis code
 
-### Corticostriatal: Start to Finish:
+### Corticostriatal Analysis (in order):
 * jh_export2matlab4.py
 * jh_GetDensityDataFromWeb.py
 * jh_pImport2matlab2.m
 * jh_AllenInstituteBundleSubtraction
 * jh_consolidatingAIBSdatasets.m
  
-### Thalamostriatal: Start to Finish:
+### Thalamostriatal Analysis (in order):
+* 
+* 
+
+### Comparative Analysis (in order):
 * 
 * 
 
