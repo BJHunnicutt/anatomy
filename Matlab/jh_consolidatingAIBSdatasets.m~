@@ -1,35 +1,44 @@
+function [injGroup_data] = jh_consolidatingAIBSdatasets(saveFlag)
+
+
 
 % This will take in the meta files and the data2 file that is within the output files from
 % jh_pImport2matlab.m and convert them to structs for each experiment (cortStr_data) 
 % and for the summed projections from each area and cre line (cortGroup_data)
-% **run immediately after jh_pImport2matlab.m because it uses some of it's variables
-% **be in the data output directory from python
-
-% to look at this data :
-% imagesc(squeeze(sum((inj_data(1).density.ipsilateral), 2))) 
-% or 
-% imagesc(inj_data(1).density.ipsilateral(:, :, 30))
-
-This makes lots of groups and lots of figures: Individual slices with projection ranges and injection sites etc
+% 
+% This makes lots of groups and lots of figures: Individual slices with projection ranges and injection sites etc
 
 
-% % % Update 5/7/2015 to interface with the updated version of jh_pImport2matlab2.m
-% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/2015_04_22_testData/data3_2015_04_28.mat')
-% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/2015_04_22_testData/data2_2015_04_23.mat')
+targetDir= uigetdir('/', 'Where is the data folder (python output)?');
+cd(targetDir)
+
+cd ../analyzed4
+anaDir = cd; 
+
+% Random Manual masks that need to be collected for this to work:
+randomMasksDir = uigetdir(targetDir, 'Where are the collected masks?');
+% strmask_ic_submask.mat
+% averageTemplate100um_rotated.mat
+% averageTemplate100umACA_rotated.mat
+% AIBS_100um.mat
 
 %Some things to load first if I'm not going to redo it all:
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed4/data_pImport.mat')
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed4/averageBrain100um/averageTemplate100umACA_rotated.mat')
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/strmask_ic_submask.mat') %I made a mask that removes the internal capsule
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed3/AIBS_100um.mat')  %this was made later, but can replace a lot of missing things if needed
+load([anaDir, '/data_pImport.mat']) % Import variable from jh_pImport2matlab.m: data
+
+load([randomMasksDir, '/averageTemplate100umACA_rotated.mat']) % Import averageTemplate100umACA_rotated
+load([randomMasksDir, '/averageTemplate100um_rotated.mat']) % Import variable from jh_pImport2matlab.m: averageTemplate100um_rotated
+load([randomMasksDir, '/strmask_ic_submask.mat']) %I made a mask that removes the internal capsule
+load([randomMasksDir, '/AIBS_100um.mat'])  %this was made later, but can replace a lot of missing things if needed
 ic_submask = submask;
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed3/injGroup_data.mat')
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed3/inj_data.mat')
+
+% Data generated below, if I want to reload the old data
+% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed3/injGroup_data.mat')
+% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/analyzed3/inj_data.mat')
+
 
 group = {'ACA','AI_GU_VISC','AUD','ECT_PERI_TE','FRA','IL','MOp','ORBl','PL_MO','PTL','RSP','SSp','SSp-bfd','SSs','VISam','VISl','VISp', 'SS', 'Vis', 'SUB_HIPP', 'Amyg', 'SNr', 'na'};
 
-targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
-cd(targetDir)
+
 fNames=fields(data);
 clear data
 
@@ -44,9 +53,8 @@ for i = 1: length(fNames)
     inj_data(i).expID = fNames{i}(2:end);
 end
 
-
-metaDir = '/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/meta3';
-cd(metaDir)
+cd ../meta3
+metaDir = cd;
 
 for i = 1: length(inj_data)
     expID = num2str(inj_data(i).expID);
@@ -97,7 +105,7 @@ for g = 1:length(fNames)
 end
 expIDcell = expIDcell';
 
-targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
+% targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
 
 for i = 1: length(inj_data)
     if inj_data(i).expID == num2str(expIDcell{i})
@@ -120,10 +128,10 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Then I'll create composite masks for the cortical groups at 3 thresholds.... 
 
-targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/averageBrain100um/averageTemplate100um_rotated.mat')
-load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/strmask_ic_submask.mat') %I made a mask that removes the internal capsule
-ic_submask = submask;
+% targetDir='/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3';
+% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3/averageBrain100um/averageTemplate100um_rotated.mat')
+% load('/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/strmask_ic_submask.mat') %I made a mask that removes the internal capsule
+% ic_submask = submask;
 
 group = {'ACA','AI_GU_VISC','AUD','ECT_PERI_TE','FRA','IL','MOp','ORBl','PL_MO','PTL','RSP','SSp','SSp-bfd','SSs','VISam','VISl','VISp', 'SS', 'Vis', 'SUB_HIPP', 'Amyg', 'SNr', 'na'};
 

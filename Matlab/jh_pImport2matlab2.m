@@ -1,4 +1,4 @@
-function [rotatedData, data] = jh_pImport2matlab2(dataDir, saveFlag)
+function [rotatedData] = jh_pImport2matlab2(dataDir, saveFlag)
 %
 % INPUTS:   dataDir: data filepath (THE LOCATION OF THE DATA OUTPUT FROM jh_export2matlab4.py)
 %                    dataDir is also the place that the data folders & tiffs will be saved
@@ -6,7 +6,6 @@ function [rotatedData, data] = jh_pImport2matlab2(dataDir, saveFlag)
 % 
 % 
 % OUTPUTS:  rotatedData: experimental projection matrices aligned to the average template brain and rorated coronally
-%           data:  the original pImport data (mostly kept for filenames later
 % 
 % 
 % PURPOSE:
