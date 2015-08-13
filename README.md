@@ -1,11 +1,11 @@
-# Documentation of all anatomy analysis code
+## Description of all anatomy analysis code
 
 ### Corticostriatal: Start to Finish:
- * jh_export2matlab4.py
- * jh_GetDensityDataFromWeb.py
- * jh_pImport2matlab2.m
- * jh_AllenInstituteBundleSubtraction
- * jh_consolidatingAIBSdatasets.m
+* jh_export2matlab4.py
+* jh_GetDensityDataFromWeb.py
+* jh_pImport2matlab2.m
+* jh_AllenInstituteBundleSubtraction
+* jh_consolidatingAIBSdatasets.m
  
 ### Thalamostriatal: Start to Finish:
 * 
@@ -50,8 +50,7 @@
 * __Inputs__: rotatedData.mat, injMeta.mat, averageTemplate100um_rotated.mat
 * __Outputs__: submask.mat
 * __Saves__: submask and also updates injMeta.mat
-* __Running Notes__: This is a manual step to apply to all AIBS data. This is a GUI so it must have the jh_AllenInstituteBundleSubtraction.fig file in the same path 
-	Notes on Google Drive as: AIBS Bundle Subtraction Notes
+* __Running Notes__: This is a manual step to apply to all AIBS data. This is a GUI so it must have the jh_AllenInstituteBundleSubtraction.fig file in the same path. Notes on Google Drive as: AIBS Bundle Subtraction Notes
 
 #### jh_consolidatingAIBSdatasets.m
 * __Purpose__: group injections from the same cortical area
@@ -90,7 +89,7 @@
 * __Saves__:
 * __Running Notes__:
 	
-	jh_corticalstratal_notes.m (spelled this way)
+#### jh_corticalstratal_notes.m (spelled this way)
 * __Purpose__: 
 * __Old File Location__: 
 * __Location to run__:
@@ -99,7 +98,7 @@
 * __Saves__:
 * __Running Notes__:
 	
-	jh_assortedStriatumFigures_postThesis.m
+#### jh_assortedStriatumFigures_postThesis.m
 * __Purpose__: 
 * __Old File Location__: 
 * __Location to run__:
@@ -109,35 +108,12 @@
 * __Running Notes__:
 
 
-### Where Thesis Figures are Made:
-Figure 1
-Figure 2
-Figure 3
-Figure 4
-Figure 5
-Figure 6
-Figure 7
-Figure 8
-
-Analyzed Data Locations:
-	- Primarily: ~/Desktop/Dynamic_Brain/MyProject/analyzed3
-	- ~/Desktop/Dynamic_Brain/MyProject/geph_forThesis (yes, misspelled)
-	- ~/Desktop/Thesis
-	- ~/Desktop/Straitum Project/2P  **This was moved, matlab may want 2P on the desktop
-	- ~/Desktop/Straitum Project/StriatumPaper/Figures  **I put bundled/diffuse data here
-
-
-Interactive Data Visualizations:
-
-Gephi: (other notes in red notebook)
-	Testing with old data:
-		-Flip the D-V (Y) axis
-		
-	Want: 
-		-a way to have all of the clustering threshods in one plot... Grouping?
-		-cluster sizes to reflect cluster volume
-		-if I do one with the individual injections, then group them by subregion
-		-get the inj ID in the graphic
-	At end:
-		-Remove Oxford Logo
-		-Add links to Tianyi’s website, our data site?, and the allen instiute
+### Where Figures are Made:
+* Figure 1
+* Figure 2
+* Figure 3
+* Figure 4
+* Figure 5
+* Figure 6
+* Figure 7
+* Figure 8
