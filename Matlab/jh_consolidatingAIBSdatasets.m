@@ -1,12 +1,15 @@
 function [injGroup_data] = jh_consolidatingAIBSdatasets(saveFlag)
-
-
-
-% This will take in the meta files and the data2 file that is within the output files from
-% jh_pImport2matlab.m and convert them to structs for each experiment (cortStr_data) 
-% and for the summed projections from each area and cre line (cortGroup_data)
+% [injGroup_data] = JH_CONSOLIDATINGAIBSDATASETS(saveFlag) 
 % 
-% This makes lots of groups and lots of figures: Individual slices with projection ranges and injection sites etc
+% INPUTS: saveFlag (1 or 0 ) saying whether you want to save 
+% OUTPUT: injGroup_data cortically grouped corticostriatal projection data 
+% 
+% PURPOSE: This will take the output from jh_pImport2matlab2.m 
+% rotatedData.mat (i.e. experimental projection matrices aligned to the average template brain) 
+% injMeta.mat (injection specific metadata) & submask.mat (bundles to subtract)
+% for each experiment and group them by common cortical origin
+% 
+
 
 targetDir= uigetdir('/', 'Where is the data folder (python output)?');
 cd(targetDir)

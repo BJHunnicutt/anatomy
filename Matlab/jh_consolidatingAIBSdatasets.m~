@@ -1,7 +1,18 @@
 function [injGroup_data] = jh_consolidatingAIBSdatasets(saveFlag)
+% [injGroup_data] = JH_CONSOLIDATINGAIBSDATASETS(saveFlag) 
+INPUTS: saveFlag (1 or 0 ) saying whether you want to save 
+OUTPUT: injGroup_data cortically grouped corticosprojection data 
 
 
-
+: will take the output from jh_pImport2matlab2.m 
+% rotatedData.mat: (i.e. experimental projection matrices aligned to the average template brain) 
+% and group them by common cortical origin
+% 
+% INPUTS: saveFlag (1 or 0 ) saying whether you want to save 
+% 
+% 
+% 
+% 
 % This will take in the meta files and the data2 file that is within the output files from
 % jh_pImport2matlab.m and convert them to structs for each experiment (cortStr_data) 
 % and for the summed projections from each area and cre line (cortGroup_data)
@@ -292,5 +303,6 @@ if saveFlag == 1
     save([anaDir, '/inj_data.mat'], 'inj_data')
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 8/12/15  JH- Make everything below their own funcions??
+%%%%%%%%%%%%%%%% 8/12/15 JH- Moved all the figures and remaining analysis
+%%%%%%%%%%%%%%%% to a new function: jh_corticostriatalFigures.m
 

@@ -5,7 +5,7 @@ function [rotatedData] = jh_pImport2matlab2(dataDir, saveFlag)
 %           saveFlag: 1 or 0: do you want to save all the outputs from this (including tiffs)
 % 
 % 
-% OUTPUTS:  rotatedData: experimental projection matrices aligned to the average template brain and rorated coronally
+% OUTPUTS:  rotatedData: experimental projection matrices aligned to the average template brain and rotated coronally
 % 
 % 
 % PURPOSE:

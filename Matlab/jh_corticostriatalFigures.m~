@@ -1,5 +1,34 @@
 function jh_corticostriatalFigures(slices, etc)
 
+targetDir= uigetdir('/', 'Where is the data folder (python output)?');
+cd(targetDir)
+
+cd ../analyzed4
+anaDir = cd; 
+
+% Random Manual masks that need to be collected for this to work:
+randomMasksDir = uigetdir(targetDir, 'Where are the collected masks?');
+% strmask_ic_submask.mat
+% averageTemplate100um_rotated.mat
+% averageTemplate100umACA_rotated.mat
+% AIBS_100um.mat
+
+%Some things to load first if I'm not going to redo it all:
+load([anaDir, '/data_pImport.mat']) % Import variable from jh_pImport2matlab.m: data
+load([randomMasksDir, '/averageTemplate100umACA_rotated.mat']) % Import averageTemplate100umACA_rotated
+load([randomMasksDir, '/averageTemplate100um_rotated.mat']) % Import variable from jh_pImport2matlab.m: averageTemplate100um_rotated
+load([randomMasksDir, '/strmask_ic_submask.mat']) %I made a mask that removes the internal capsule
+load([randomMasksDir, '/AIBS_100um.mat'])  %this was made later, but can replace a lot of missing things if needed
+ic_submask = submask;
+
+% Data generated in jh_consolidatingAIBSdatasets.m
+load([anaDir, '/injGroup_data.mat']) 
+load([anaDir, '/inj_data.mat'])
+
+
+group = {'ACA','AI_GU_VISC','AUD','ECT_PERI_TE','FRA','IL','MOp','ORBl','PL_MO','PTL','RSP','SSp','SSp-bfd','SSs','VISam','VISl','VISp', 'SS', 'Vis', 'SUB_HIPP', 'Amyg', 'SNr', 'na'};
+fNames=fields(data);
+clear data
 
 
 
