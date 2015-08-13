@@ -1,7 +1,7 @@
 function [injGroup_data] = jh_consolidatingAIBSdatasets(saveFlag)
 % [injGroup_data] = JH_CONSOLIDATINGAIBSDATASETS(saveFlag) 
 % 
-% INPUTS: saveFlag (1 or 0 ) saying whether you want to save 
+% INPUTS: saveFlag (1 or 0 ) saying whether you want to save injGroup_data and inj_data.mat
 % OUTPUT: injGroup_data cortically grouped corticostriatal projection data 
 % 
 % PURPOSE: This will take the output from jh_pImport2matlab2.m 

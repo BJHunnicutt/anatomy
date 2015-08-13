@@ -1,4 +1,13 @@
 function jh_corticostriatalFigures(slices, etc)
+% [vargout] = JH_CORTICOSTRIATALFIGURES(saveFlag) 
+% 
+% INPUTS: saveFlag (1 or 0 ) saying whether you want to save OUTPUTS
+% OUTPUT: 
+% 
+% PURPOSE: This will take the output from jh_consolidatingAIBSdatasets.m 
+% and generate a bunch of figures. 
+
+
 
 targetDir= uigetdir('/', 'Where is the data folder (python output)?');
 cd(targetDir)
@@ -29,8 +38,6 @@ load([anaDir, '/inj_data.mat'])
 group = {'ACA','AI_GU_VISC','AUD','ECT_PERI_TE','FRA','IL','MOp','ORBl','PL_MO','PTL','RSP','SSp','SSp-bfd','SSs','VISam','VISl','VISp', 'SS', 'Vis', 'SUB_HIPP', 'Amyg', 'SNr', 'na'};
 fNames=fields(data);
 clear data
-
-
 
 
 
