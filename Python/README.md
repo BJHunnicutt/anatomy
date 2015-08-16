@@ -1,8 +1,7 @@
 ## Accessing Allen Institute Cortical Injection Data
-> Get the AIBS data ready to analyze in matlab
+> See [main anatomy overview](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for details
 
-
-### AIBS Experiments Included in Analysis:
+### AIBS experiments included in analysis:
 ---
 Experiment ID    |	Primary target structure	|	Group	|	Layer	|
 ---|---|---|---|
