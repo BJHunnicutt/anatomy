@@ -25,7 +25,6 @@
 | 8. jh_consolidatingThalamusData.m* | Get thalamic injections, group them, calculate coverage & nuclear coverage
 | 9. jh_consolidatingAIBS_forNetworkAnalysis.m* | Generate data for network analyses
 | 10. jh_assortedStriatumFigures.m* | Generate several example figures for methods and background
-| 11. - | -
 
 
 
@@ -78,9 +77,31 @@
 * __Running Notes__: Some file paths are not generalized, double check before running.
 
 
-
-### Other Information:
 ---
+### Thalamostriatal Data Generation:
+ * (/Matlab/thalamostriatal/\*)  
+
+| File Name					|	Purpose
+| ----------------------------------|-------------
+| 1. jh_segmentstriatum.m | Create manual striatum masks
+| 2. jh_strRot.m | Manually select striatal landmarks used for alignment
+| 3. jh_checkingStrPts.m | Check manually selected points
+| 4. jh_createStrMaskedTiffs.m | Generate tiffs cropped by the striatum mask
+| --> WEKA Image Segmentation machine learning algorythm implemented via ImageJ | Select and train image subset, then apply WEKA machine learning (ML) algorithm to all images. Output => WEKA Probability Images for diffuse projection localization
+| 5. jh_threshold_WEKA.m | GUI to manually select probability thresholds ( Requires: jh_threshold_WEKA.fig)
+| 6. jh_WEKAprobToMask.m | Apply the selected thresholds to the probability masks
+| 7. jh_finalProjMaskAdjustments_green.m | Manual correction of small errors in automated WEKA ML output for green channel (Requires: jh_finalProjMaskAdjustments_green.fig)
+| 8. jh_finalProjMaskAdjustments_red.m | Manual correction of small errors in automated WEKA ML output for red channel (Requires: jh_finalProjMaskAdjustments_red.fig)
+| 9. jh_createFinalProjMasks.m | Generate final projection masks that include manual adjustments and holes caused be traveling axons filled
+| 10. jh_createFinalProjMasks_fixaddMaskMistake.m | Ran after jh_createFinalProjMasks.m to fix a small error.
+
+##### See: */Matlab/thalamostriatal/README.md* for implementation details.
+
+
+<!-- | jh_trainedStrProjMaskGen.m | Creates colormask.mat to subract aberrantly localized projections * Originally did this after jh_WEKAprobToMask.m, then refined with jh_finalProjMaskAdjustments... GUIs, but jsut starting with the GIUS works too-->
+
+---
+### Other Information:
 ##### Required Matlab Functionality:
 * 'Image Processing Toolbox' & 'Statistics and Machine Learning Toolbox'
 
@@ -89,3 +110,24 @@
 
 ##### Collection of template masks, data, and settings required above:
 * See: */Matlab/masks/...*
+
+##### Striatum alignment for thalamostriatal data:
+* See: */Matlab/striatum_alignment/...*
+* *Currently in the .gitignore - Need to ask Haining about putting this code in here with attribution*
+
+
+### Other Information:
+##### Required Matlab Functionality:
+* 'Image Processing Toolbox' & 'Statistics and Machine Learning Toolbox'
+
+##### Helper functions required for the code above:
+* See: */Matlab/auxillary_funcitonsAndScripts/...*
+* Currently in the .gitignore due to a CRLF/LF error, need to convert manually
+
+##### Collection of template masks, data, and settings required above:
+* See: */Matlab/masks/...*
+* Currently in the .gitignore due to a CRLF/LF error, need to convert manually
+
+##### Striatum alignment for thalamostriatal data:
+* See: */Matlab/striatum_alignment/...*
+* Currently in the .gitignore - Need to ask Haining about putting this code in here with attribution
