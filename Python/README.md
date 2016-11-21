@@ -1,6 +1,10 @@
 ## Accessing Allen Institute Cortical Injection Data
 > See [main anatomy README](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for overview
 
+| File Name					| Purpose
+| ----------------------------------|-------------
+| 1. jh_GetDensityDataFromWeb.py | Access density data from AIBS API
+| 2. jh_export2matlab4.py | Get voxelized AIBS data out of python
 
 ### Details about each step:
 #### 1. jh_getDensityDataFromWeb.py

@@ -1,6 +1,17 @@
 ## Generation/Analysis of Corticostriatal Data & Integration with Other Network Data:
 > See [main anatomy README](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for overview
 
+| File Name					| Purpose
+| ----------------------------------|-------------
+| 3. jh_pImport2matlab2.m			| Get AIBS data aligned & prepped for analysis
+| 4. jh_AllenInstituteBundleSubtraction.m	| Remove bundled projections from AIBS data
+| 5. jh_consolidatingAIBSdatasets.m	| Group injection data by cortical origin
+| 6. jh_corticostriatalFigures.m | Generate figures for corticostriatal data alone
+| 7. jh_voxelClustering_striatum.m | Create striatal subdivisions based on convergent cortical inputs
+| 8. jh_consolidatingThalamusData.m | Get thalamic injections, group them, calculate coverage & nuclear coverage
+| 9. jh_consolidatingAIBS_forNetworkAnalysis.m | Generate data for network analyses
+| 10. jh_assortedStriatumFigures.m | Generate several example figures for methods and background
+
 
 ### Details about each step:
 * (1-2 are [Python](https://github.com/BJHunnicutt/anatomy/tree/master/Python) functions)
