@@ -2,6 +2,7 @@ function [injGroup_data] = jh_consolidatingAIBSdatasets(saveFlag)
 % [injGroup_data] = JH_CONSOLIDATINGAIBSDATASETS(saveFlag) 
 % 
 % INPUTS: saveFlag (1 or 0 ) saying whether you want to save injGroup_data and inj_data.mat
+%                 (saveFlag == 2) will update injMeta.mat in each meta3/EID/ folder -- making separate because I don't want to redo these everytime)
 % OUTPUT: injGroup_data cortically grouped corticostriatal projection data 
 % 
 % PURPOSE: This will take the output from jh_pImport2matlab2.m 
@@ -10,7 +11,8 @@ function [injGroup_data] = jh_consolidatingAIBSdatasets(saveFlag)
 % for each experiment and group them by common cortical origin
 % 
 
-
+disp('Where is the data folder (python output)?')
+% likely here: '/Users/jeaninehunnicutt/Desktop/Dynamic_Brain/MyProject/data3'
 targetDir= uigetdir('/', 'Where is the data folder (python output)?');
 cd(targetDir)
 
@@ -18,6 +20,7 @@ cd ../analyzed4
 anaDir = cd; 
 
 % Random Manual masks that need to be collected for this to work:
+disp('Where are the collected masks?')
 randomMasksDir = uigetdir(targetDir, 'Where are the collected masks?');
 % strmask_ic_submask.mat
 % averageTemplate100um_rotated.mat
@@ -100,7 +103,7 @@ end
 inj_group = {'FRA';'RSP';'VISp';'VISam';'VISl';'SNr';'SSp';'RSP';'AUD';'SSp-bfd';'PTL';'ORBl';'RSP';'AI_GU_VISC';'MOp';'AUD';'SSp';'Amyg';'VISp';'VISl';'SSs';'AUD';'MOp';'SSp-bfd';'VISp';'SUB_HIPP';'Amyg';'ACA';'SSp-bfd';'SUB_HIPP';'SUB_HIPP';'SUB_HIPP';'ACA';'ACA';'MOp';'ECT_PERI_TE';'VISam';'AUD';'SUB_HIPP';'MOp';'AUD';'ORBl';'ECT_PERI_TE';'SUB_HIPP';'IL';'SSp';'FRA';'PL_MO';'VISp';'AUD';'ORBl';'SNr';'ACA';'RSP';'ACA';'RSP';'MOp';'ECT_PERI_TE';'AI_GU_VISC';'RSP';'SSp';'ACA';'VISp';'VISl';'VISl';'MOp';'SSp-bfd';'SSs';'ORBl';'PTL';'SSp-bfd';'AI_GU_VISC';'SNr';'AUD';'SUB_HIPP';'MOp';'AI_GU_VISC';'AUD';'SUB_HIPP';'Amyg';'SSp-bfd';'MOp';'ECT_PERI_TE';'ACA';'ACA';'ORBl';'PTL';'na';'AI_GU_VISC';'PL_MO';'FRA';'VISam';'SSp';'VISl';'na';'SSp-bfd';'VISl';'SSp';'ECT_PERI_TE';'SSp-bfd';'RSP';'AI_GU_VISC';'VISp';'Amyg';'ECT_PERI_TE';'SSp';'PL_MO';'VISp';'FRA';'SSp';'SSp';'IL';'SUB_HIPP';'SUB_HIPP';'IL';'VISl';'ORBl';'RSP';'MOp';'PL_MO';'FRA';'SUB_HIPP';'SSp';'PTL';'PL_MO';'PL_MO';'VISam';'VISp';'RSP';'AI_GU_VISC';'SSp';'VISam'};
 %     *This list is created manually in All_selectInjecitons_Meta.xlsx Group2 it has all the brains in numerical order as 
 %      of the data created 4/28/15 but has 'na' in the group names for problem injections
-%           ... (In case I ever forget this: I copy the column out of excel,'paste and match style' in Text Edit and find and replace line breaks with ';' )
+%           ... (In case I ever forget this: I just copied the column out of excel,'paste and match style' in Text Edit and find and replace line breaks with ';' )
 
 for g = 1:length(fNames)
     expIDcell{g} = fNames{g}(2:end);
@@ -120,7 +123,9 @@ for i = 1: length(inj_data)
         load('injMeta.mat')
         injMeta.group = inj_group{i};
         injMeta.mouseline = inj_data(i).mouseline;
-        save([targetDir, '/', inj_data(i).expID, '/injMeta.mat'], 'injMeta')
+        if saveFlag == 2
+            save([targetDir, '/', inj_data(i).expID, '/injMeta.mat'], 'injMeta')
+        end
        
     else i % this will make sure that I am assigning the correct experiments to the correct groups
     end
@@ -297,4 +302,3 @@ end
 
 %%%%%%%%%%%%%%%% 8/12/15 JH- Moved all the figures and remaining analysis
 %%%%%%%%%%%%%%%% to a new function: jh_corticostriatalFigures.m
-

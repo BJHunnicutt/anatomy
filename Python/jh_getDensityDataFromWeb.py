@@ -25,7 +25,10 @@ region_specific_injs = [184168899, 166153483, 296048512, 180917660, 174361746, 1
 #structures = '''AAA,ACAd,ACAv,ACB,AD,AHN,AId,AIp,AIv,AMB,AMd,AMv,AN,AOB,AON,APN,ARH,AUDd,AUDp,AUDv,AV,BLA,BMA,BST,CA1,CA2,CA3,CEA,CENT,CL,CLA,CLI,CM,COAa,COAp,CP,CS,CUL,CUN,DCO,DG,DMH,DN,DP,DR,ECT,ENTl,ENTm,EPd,EPv,FL,FN,FRP,FS,GPe,GPi,GRN,GU,IA,ICc,ICd,ICe,ILA,IMD,IO,IP,IPN,IRN,LA,LAV,LD,LGd,LGv,LH,LHA,LP,LPO,LRN,LSc,LSr,LSv,MA,MARN,MD,MDRNd,MDRNv,MEA,MEPO,MGd,MGm,MGv,MH,MM,MOB,MOp,MOs,MPN,MPO,MPT,MRN,MS,MV,NDB,NI,NLL,NLOT,NOD,NOT,NPC,NTS,ORBl,ORBm,ORBvl,OT,PA,PAA,PAG,PAR,PARN,PB,PCG,PERI,PF,PFL,PG,PGRNd,PGRNl,PH,PIR,PL,PMd,PO,POL,POST,PP,PPN,PRE,PRM,PRNc,PRNr,PRP,PSV,PT,PTLp,PVH,PVT,PVp,PVpo,PYR,RCH,RE,RH,RM,RN,RR,RSPagl,RSPd,RSPv,RT,SBPV,SCm,SCs,SF,SI,SIM,SMT,SNc,SNr,SOC,SPA,SPFm,SPFp,SPIV,SPVC,SPVI,SPVO,SSp-bfd,SSp-ll,SSp-m,SSp-n,SSp-tr,SSp-ul,SSs,STN,SUBd,SUBv,SUM,SUT,SUV,TEa,TR,TRN,TRS,TT,TU,V,VAL,VCO,VII,VISC,VISal,VISam,VISl,VISp,VISpl,VISpm,VM,VMH,VPL,VPM,VPMpc,VTA,XII'''.split(',')
 
 #5/23/15 I want to do just these, i'm missing a few nuclei
-structures = '''IMD,MD,RH,CM,PR,SMT,PF,LP,PCN,CL,IAM,PVT,PT,RE,IAD,AM,AD,LD,PO,VAL,VM,VPM,AV,RT,VPL'''.split(',')
+#structures = '''IMD,MD,RH,CM,PR,SMT,PF,LP,PCN,CL,IAM,PVT,PT,RE,IAD,AM,AD,LD,PO,VAL,VM,VPM,AV,RT,VPL'''.split(',')
+
+#9/21/16 Redoing for all structures...
+structures = '''IMD,MD,RH,CM,PR,SMT,PF,LP,PCN,CL,IAM,PVT,PT,RE,IAD,AM,AD,LD,PO,VAL,VM,VPM,AV,RT,VPL,AAA,ACAd,ACAv,ACB,AD,AHN,AId,AIp,AIv,AMB,AMd,AMv,AN,AOB,AON,APN,ARH,AUDd,AUDp,AUDv,AV,BLA,BMA,BST,CA1,CA2,CA3,CEA,CENT,CL,CLA,CLI,CM,COAa,COAp,CP,CS,CUL,CUN,DCO,DG,DMH,DN,DP,DR,ECT,ENTl,ENTm,EPd,EPv,FL,FN,FRP,FS,GPe,GPi,GRN,GU,IA,ICc,ICd,ICe,ILA,IMD,IO,IP,IPN,IRN,LA,LAV,LD,LGd,LGv,LH,LHA,LP,LPO,LRN,LSc,LSr,LSv,MA,MARN,MD,MDRNd,MDRNv,MEA,MEPO,MGd,MGm,MGv,MH,MM,MOB,MOp,MOs,MPN,MPO,MPT,MRN,MS,MV,NDB,NI,NLL,NLOT,NOD,NOT,NPC,NTS,ORBl,ORBm,ORBvl,OT,PA,PAA,PAG,PAR,PARN,PB,PCG,PERI,PF,PFL,PG,PGRNd,PGRNl,PH,PIR,PL,PMd,PO,POL,POST,PP,PPN,PRE,PRM,PRNc,PRNr,PRP,PSV,PT,PTLp,PVH,PVT,PVp,PVpo,PYR,RCH,RE,RH,RM,RN,RR,RSPagl,RSPd,RSPv,RT,SBPV,SCm,SCs,SF,SI,SIM,SMT,SNc,SNr,SOC,SPA,SPFm,SPFp,SPIV,SPVC,SPVI,SPVO,SSp-bfd,SSp-ll,SSp-m,SSp-n,SSp-tr,SSp-ul,SSs,STN,SUBd,SUBv,SUM,SUT,SUV,TEa,TR,TRN,TRS,TT,TU,V,VAL,VCO,VII,VISC,VISal,VISam,VISl,VISp,VISpl,VISpm,VM,VMH,VPL,VPM,VPMpc,VTA,XII'''.split(',')
 
 #structures = ['IMD', 'MD']
 
@@ -98,19 +101,19 @@ x = '/Applications/anaconda/friday_harbor_data'
 em = experiment.ExperimentManager(data_dir = x) #data_dir is the keyword it is expecting
 
 # Save the injection specific information to be used in as nodes in Gephi
-injid_file = open('injid_May2015_AddNuclei_ipsi.csv', 'w')
+injid_file = open('injid_2016_ipsi.csv', 'w')
 for injID in region_specific_injs:
     injid_file.write("%s,%s,%s\n" % (injID, em.experiment_by_id(injID).structure_abbrev, em.experiment_by_id(injID).injection_mask().centroid))
 injid_file.close()   
 
 # Save the ontology specific information to be used in as nodes in Gephi
-structure_id_file = open('structure_ids_May2015_AddNuclei_ipsi.csv', 'w')
+structure_id_file = open('structure_ids_2016_ipsi.csv', 'w')
 for acronym in all_structure_ids:
     structure_id_file.write("%s,%s,%s,%s\n" % (acronym, ontology.id_acronym_dict[acronym], ontology.get_mask_from_id_right_hemisphere_nonzero(acronym).centroid, ontology.id_structure_dict[acronym].name))
 structure_id_file.close()
 
 # Save the projection densities from each injection to all 214 other areas
-edges_file = open('edges_May2015_AddNuclei_ipsi.csv', 'w')
+edges_file = open('edges_2016_ipsi.csv', 'w')
 for row in table:
     for cell in row:
         edges_file.write("%s," % cell)
