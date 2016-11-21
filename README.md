@@ -16,9 +16,8 @@
 * [Python/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Python)
 * [Matlab/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab)
 
-
 | File Name					| Folder |	Purpose
-| ----------------------------------|-------------
+| ----------------------------------|-------------|---
 | 1. jh_export2matlab4.py | Python |	Get voxelized AIBS data out of python
 | 2. jh_GetDensityDataFromWeb.py | Python |	Access density data from AIBS API
 | 3. jh_pImport2matlab2.m			| Matlab |	Get AIBS data aligned & prepped for analysis
