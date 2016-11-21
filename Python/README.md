@@ -1,6 +1,25 @@
 ## Accessing Allen Institute Cortical Injection Data
 > See [main anatomy overview](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for details
 
+
+### Details about each step:
+#### 1. jh_export2matlab4.py
+* __Purpose__: Get the voxelized AIBS data for the striatum (CP + ACB) from python into matrices for matlab
+* __Location to run__: anywhere as long as the data directory is correct, hard coded for my computer
+* __Inputs__: Voxelized data from the AIBS: ‘raw_data’ folder, friday_harbor.structure, friday_harbor.mask, friday_harbor.experiment
+* __Outputs__: voxPosL, voxDenL, voxPosInj, voxDenInj, voxDenAll (unmasked projection and injection info)
+* __Saves__: the outputs above for all brain #s listed in the script as “region_specific_injs“
+* __Running Notes__: data directory is hard coded for my computer
+
+#### 2. jh_getDensityDataFromWeb.py
+* __Purpose__:  Access the AIBS API to get the density and volume of projections to all other brain areas by each injection.
+* __Location to run__: anywhere as long as the data directory is correct, hard coded for my computer
+* __Inputs__: Voxelized data from the AIBS: ‘raw_data’ folder, AIBS API, friday_harbor.structure, friday_harbor.mask, friday_harbor.experiment
+* __Outputs__: csv files with data formatted for Gephi (edges and nodes)
+* __Saves__: 'structure_ids.csv' & 'edges.csv'
+* __Running Notes__: data directory is hard coded for my computer
+
+
 ### AIBS experiments included in analysis:
 ---
 Experiment ID    |	Cortical Group	|	Layer	|
