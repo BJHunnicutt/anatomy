@@ -122,11 +122,9 @@
 
 ##### Helper functions required for the code above:
 * See: */Matlab/auxillary_funcitonsAndScripts/...*
-* Currently in the .gitignore due to a CRLF/LF error, need to convert manually
 
 ##### Collection of template masks, data, and settings required above:
 * See: */Matlab/masks/...*
-* Currently in the .gitignore due to a CRLF/LF error, need to convert manually
 
 ##### Striatum alignment for thalamostriatal data:
 * See: */Matlab/striatum_alignment/...*
