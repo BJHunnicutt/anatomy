@@ -1,7 +1,7 @@
 
 
 ### Overview of data preparation, WEKA Segmentation, and data cleanup for thalamostriatal projection detection:
-> See [ImageJ folder](https://github.com/BJHunnicutt/anatomy/tree/master/ImageJ) for macros used to set up WEKA segmentation
+> \*See [ImageJ ](https://github.com/BJHunnicutt/anatomy/tree/master/ImageJ) folder for macros used to set up WEKA segmentation  
 
 
 1. Choose representative striatal sections (background subtracted, gaussian filtered, masked tiffs) to train:
