@@ -8,7 +8,7 @@
 : Hunnicutt, B. J. et al. (2014). [A comprehensive thalamocortical projection map at the mesoscopic level](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html). Nature Neuroscience. 17, 1276–1285.
 
 [Cortical Projections](http://connectivity.brain-map.org/projection)
-: Oh, S. W. et al. (2014). A mesoscale connectome of the mouse brain. Nature 508, 207–214.
+: Oh, S. W. et al. (2014). [A mesoscale connectome of the mouse brain](http://www.nature.com/nature/journal/v508/n7495/full/nature13186.html). Nature 508, 207–214.
 
 
 ---
