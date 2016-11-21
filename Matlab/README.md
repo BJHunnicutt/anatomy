@@ -1,5 +1,5 @@
-## Analyzing Corticostriatal Data & Integrating with All Other Network Data:
-> See [main anatomy overview](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for details
+## Generation/Analysis of Corticostriatal Data & Integration with Other Network Data:
+> See [main anatomy README](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for overview
 
 
 ### Details about each step:

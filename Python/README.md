@@ -1,5 +1,5 @@
 ## Accessing Allen Institute Cortical Injection Data
-> See [main anatomy overview](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for details
+> See [main anatomy README](https://github.com/BJHunnicutt/anatomy/blob/master/README.md) for overview
 
 
 ### Details about each step:

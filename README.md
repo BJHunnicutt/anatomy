@@ -1,20 +1,19 @@
 # Documentation of Anatomy Analysis Code
-> This is the analysis code for the striatal portion of my PhD thesis work: "A comprehensive map of excitatory input convergence in the mouse striatum." The corticostriatal dataset was generated from data produced by the [Allen Institute for Brain Science](http://connectivity.brain-map.org/projection) (AIBS) & the thalamostriatal dataset generated from data produced by us for a [previous study](http://digitalcollections.ohsu.edu/projectionmap).
+> This is the analysis code for the striatal portion of my PhD thesis work: "A comprehensive map of excitatory input convergence in the mouse striatum." The corticostriatal dataset was generated from data produced by the [Allen Institute for Brain Science](http://connectivity.brain-map.org/projection) (AIBS) & the thalamostriatal dataset was generated from data produced by us for a [previous study](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html).
 
 ---
 ### Data Sources:
 
 [Thalamic Projections](http://digitalcollections.ohsu.edu/projectionmap)
-: Hunnicutt, B. J. et al. (2014). A comprehensive thalamocortical projection map at the mesoscopic level. Nature Neuroscience. 17, 1276–1285.
+: Hunnicutt, B. J. et al. (2014). [A comprehensive thalamocortical projection map at the mesoscopic level](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html). Nature Neuroscience. 17, 1276–1285.
 
 [Cortical Projections](http://connectivity.brain-map.org/projection)
 : Oh, S. W. et al. (2014). A mesoscale connectome of the mouse brain. Nature 508, 207–214.
 
 
 ---
-### Overview of Analysis Code (in order of use):
-* [Python/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Python)
-* [Matlab/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab)
+### Corticostriatal Data & Integrating with Other Network Data:
+* [Python/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Python) &  [Matlab/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab)
 
 | File Name					| Folder |	Purpose
 | ----------------------------------|-------------|---
