@@ -1,19 +1,19 @@
 # Documentation of Anatomy Analysis Code
-> This is the analysis code for the striatal portion of my PhD thesis work: "A comprehensive map of excitatory input convergence in the mouse striatum." The corticostriatal dataset was generated from data produced by the [Allen Institute for Brain Science](http://connectivity.brain-map.org/projection) (AIBS) & the thalamostriatal dataset was generated from data produced by us for a [previous study](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html).
+> This is the analysis code for the striatal portion of my PhD thesis work: "A comprehensive map of excitatory input convergence in the mouse striatum," (Publication in Review). The corticostriatal dataset was generated from data produced by the [Allen Institute for Brain Science](http://connectivity.brain-map.org/projection) (AIBS) & the thalamostriatal dataset was generated from data produced by us for a [previous study](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html).
 
 ---
 ### Data Sources:
 
-[Thalamic Projections](http://digitalcollections.ohsu.edu/projectionmap)
+[Thalamic Projections](http://digitalcollections.ohsu.edu/projectionmap "OHSU Data archive")
 : Hunnicutt, B. J. et al. (2014). [A comprehensive thalamocortical projection map at the mesoscopic level](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html). Nature Neuroscience. 17, 1276–1285.
 
-[Cortical Projections](http://connectivity.brain-map.org/projection)
+[Cortical Projections](http://connectivity.brain-map.org/projection "AIBS Mouse Brain Connectivity Site")
 : Oh, S. W. et al. (2014). [A mesoscale connectome of the mouse brain](http://www.nature.com/nature/journal/v508/n7495/full/nature13186.html). Nature 508, 207–214.
 
 
 ---
 ### Corticostriatal Data & Integrating with Other Network Data:
-* [Python/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Python) &  [Matlab/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab)
+* [Python/](https://github.com/BJHunnicutt/anatomy/tree/master/Python) &  [Matlab/](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab)
 
 | File Name					| Folder |	Purpose
 | ----------------------------------|-------------|---
@@ -31,7 +31,7 @@
 
 ---
 ### Thalamostriatal Data Generation:
- * [/Matlab/thalamostriatal/\*](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab/thalamostriatal)
+ * [/Matlab/thalamostriatal/](https://github.com/BJHunnicutt/anatomy/tree/master/Matlab/thalamostriatal)
 
 | File Name					|	Purpose
 | ----------------------------------|-------------
@@ -47,7 +47,7 @@
 | 9. jh_createFinalProjMasks.m | Generate final projection masks that include manual adjustments and holes caused be traveling axons filled
 | 10. jh_createFinalProjMasks_fixaddMaskMistake.m | Ran after jh_createFinalProjMasks.m to fix a small error.
 
-##### See: [/Matlab/thalamostriatal/README.md](https://github.com/BJHunnicutt/anatomy/blob/master/Matlab/thalamostriatal/README.md) for implementation details.
+#### See: [/Matlab/thalamostriatal/README.md](https://github.com/BJHunnicutt/anatomy/blob/master/Matlab/thalamostriatal/README.md) for implementation details.
 
 
 <!-- | jh_trainedStrProjMaskGen.m | Creates colormask.mat to subract aberrantly localized projections * Originally did this after jh_WEKAprobToMask.m, then refined with jh_finalProjMaskAdjustments... GUIs, but jsut starting with the GIUS works too-->
