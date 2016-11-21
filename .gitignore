@@ -17,12 +17,14 @@
 /tmp
 .env
 
+# Ignore temp files
 *.DS_Store
-.DS_Store
-.gitignore
+*DS_Store
+*gitignore
 
 coverage
 
+# Ignore some specific folders
 Python/DensityDataFromAPI/
 Matlab/unused/
 README_full.md
