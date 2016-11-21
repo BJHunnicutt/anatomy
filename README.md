@@ -17,8 +17,8 @@
 
 | File Name					| Folder |	Purpose
 | ----------------------------------|-------------|---
-| 1. jh_export2matlab4.py | Python |	Get voxelized AIBS data out of python
-| 2. jh_GetDensityDataFromWeb.py | Python |	Access density data from AIBS API
+| 1. jh_GetDensityDataFromWeb.py | Python |	Access density data from AIBS API
+| 2. jh_export2matlab4.py | Python |	Get voxelized AIBS data out of python
 | 3. jh_pImport2matlab2.m			| Matlab |	Get AIBS data aligned & prepped for analysis
 | 4. jh_AllenInstituteBundleSubtraction.m	| Matlab |	Remove bundled projections from AIBS data
 | 5. jh_consolidatingAIBSdatasets.m	| Matlab |	Group injection data by cortical origin
@@ -39,7 +39,7 @@
 | 2. jh_strRot.m | Manually select striatal landmarks used for alignment
 | 3. jh_checkingStrPts.m | Check manually selected points
 | 4. jh_createStrMaskedTiffs.m | Generate tiffs cropped by the striatum mask
-| --> WEKA Image Segmentation machine learning algorithm implemented via ImageJ | Select and train image subset, then apply WEKA machine learning (ML) algorithm to all images. Output => WEKA Probability Images for diffuse projection localization
+| --> WEKA Image Segmentation machine learning algorithm implemented via ImageJ | Select and train image subset, then apply WEKA machine learning algorithm to all images. Output => WEKA Probability Images for diffuse projection localization
 | 5. jh_threshold_WEKA.m | GUI to manually select probability thresholds ( Requires: jh_threshold_WEKA.fig)
 | 6. jh_WEKAprobToMask.m | Apply the selected thresholds to the probability masks
 | 7. jh_finalProjMaskAdjustments_green.m | Manual correction of small errors in automated WEKA ML output for green channel (Requires: jh_finalProjMaskAdjustments_green.fig)
