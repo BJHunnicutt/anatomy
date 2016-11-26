@@ -26,6 +26,8 @@ coverage
 # Ignore some specific folders
 Python/DensityDataFromAPI/
 Matlab/unused/
+Matlab/auxillary_funcitonsAndScripts/mhd_Reading/
 README_full.md
+
 
 Matlab/striatal_alignment/
