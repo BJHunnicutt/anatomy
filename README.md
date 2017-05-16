@@ -1,9 +1,9 @@
 # Documentation of Anatomy Analysis Code
 
+> This is the analysis code for the striatal portion of my PhD thesis work: "[A comprehensive map of excitatory input convergence in the mouse striatum](http://digitalcommons.ohsu.edu/etd/3724/)," (Publication in Review). The corticostriatal dataset was generated from data produced by the [Allen Institute for Brain Science](http://connectivity.brain-map.org/projection) (AIBS) & the thalamostriatal dataset was generated from data produced by us for a [previous study](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html).
+
 #### Publication:
 Hunnicutt, B. J. et al. (2016) [A comprehensive excitatory input map of the striatum reveals novel functional organization.](https://elife.elifesciences.org/content/5/e19103/article-data) eLife. 5, e19103.
-
-> This is the analysis code for the striatal portion of my PhD thesis work: "[A comprehensive map of excitatory input convergence in the mouse striatum](http://digitalcommons.ohsu.edu/etd/3724/)," (Publication in Review). The corticostriatal dataset was generated from data produced by the [Allen Institute for Brain Science](http://connectivity.brain-map.org/projection) (AIBS) & the thalamostriatal dataset was generated from data produced by us for a [previous study](http://www.nature.com/neuro/journal/v17/n9/abs/nn.3780.html).
 
 ---
 ### Data Sources:
